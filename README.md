@@ -12,6 +12,7 @@ Before you begin, ensure you have the following installed on your system:
 
 
 
+
 ### Task 1: Build a Web Page to Control Robot Direction
 
 ### Step 1: Set Up XAMPP
@@ -27,17 +28,21 @@ Before you begin, ensure you have the following installed on your system:
 
 ### Step 3: Create Project Files
 1. index.html: Create the main control interface.
-    html
+ 
  
 2. control.php: Handle direction input and store it in the database.
-    php
   
+  
+![Screenshot 2024-07-08 004524](https://github.com/CadyAlali/robot_control/assets/174820441/08f95f9e-a2f1-4313-87d0-f28783813a05)
+
 
 ### Task 2: Create a Web Page to Display Stored Data (Latest Value)
 
 ### Create Display Page
 1. display.html: Create a page to display the latest direction value.
-    html
+
  
 2. fetch_last_value.php: Fetch the latest value from the database.
-    php# robot_control
+
+![Screenshot 2024-07-08 004810](https://github.com/CadyAlali/robot_control/assets/174820441/207a4377-63cf-472c-af8a-6d6c3b720541)
+    
