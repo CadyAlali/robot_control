@@ -1,6 +1,14 @@
 
 ### “Robot Control Web Interface”
 
+
+
+We worked as a group
+the group members:
+- Cady Alali
+- Dana Alghofaily
+- Kady Aldughaim
+
 This project consists of two main tasks:
 1. Building a web page to control the direction of a robot and linking it to a database.
 2. Creating a web page to display the stored data (latest value).
