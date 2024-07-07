@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Last Direction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        #last-direction {
+            font-weight: bold;
+            color: #000;
+            font-size: 24px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: inline-block;
+        }
+        .refresh {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .refresh:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function fetchLastDirection() {
+            fetch(`fetch_last_value.php`)
+                .then(response => response.text())
+                .then(data => document.getElementById('last-direction').innerText = data);
+        }
+
+        // Fetch the last direction every 5 seconds
+        setInterval(fetchLastDirection, 5000);
+
+        // Fetch immediately when the page loads
+        window.onload = fetchLastDirection;
+    </script>
+</head>
+<body>
+    <h1>Last Direction</h1>
+    <div class="container">
+        <h2>Last Direction: <span id="last-direction">Loading...</span></h2>
+    </div>
+    <button class="refresh" onclick="fetchLastDirection()">Refresh Now</button>
+</body>
+</html>
+

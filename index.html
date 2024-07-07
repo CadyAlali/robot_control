@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robot Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        button {
+            background-color: grey;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function sendDirection(direction) {
+            fetch(`control.php?direction=${direction}`)
+                .then(response => response.text())
+                .then(data => console.log(data));
+        }
+    </script>
+</head>
+<body>
+    <h1>Control Robot Direction</h1>
+    <div class="container">
+        <div class="btn-group">
+            <button onclick="sendDirection('forward')">Forward</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="sendDirection('left')">Left</button>
+            <button onclick="sendDirection('stop')">Stop</button>
+            <button onclick="sendDirection('right')">Right</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="sendDirection('backward')">Backward</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
